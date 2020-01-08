@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="icons/Icon-48.png"/>
+<link rel="canonical" href="https://push.santhoshveer.com/" />
+
+<title>Gotify Push Notification</title>
+<meta name="description" content="Send Push Notification to Gotify Server." />
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Gty Push">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+<meta name="apple-mobile-web-app-title" content="Gty Push">
+
+<link rel="apple-touch-icon" href="icons/Icon-48.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icons/Icon-72.png">
+<link rel="apple-touch-icon" sizes="96x96" href="icons/Icon-96.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icons/Icon-144.png">
+<link rel="apple-touch-icon" sizes="192x192" href="icons/Icon-192.png">
+<link rel="apple-touch-icon" sizes="256x256" href="icons/Icon-256.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icons/Icon-512.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" integrity="sha256-D9M5yrVDqFlla7nlELDaYZIpXfFWDytQtiV+TaH6F1I=" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="assets/built/style.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap" rel="stylesheet">
+
+<link rel="manifest" href="manifest.json">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<section class="section">
+<div class="container">
+<div class="column is-half is-offset-one-quarter">
+<br>
+<h1 class="title">Gotify</h1>
+<p>Send Real-Time 🔥 Push Notification to Gotify Server</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container content">
+<div class="columns is-centered">
+<div class="column is-half">
+<div class="card-content content user-form login">
+
+<h3 class="title has-text-centered">Register your Gotify API Key</h3>
+
+<div class="tags has-addons is-horizontal-center">
+<span class="tag is-dark">ZERO</span>
+<span class="tag is-success">Logs</span>
+</div>
+<blockquote class="notification is-link">
+<small>Your API Key Has been Stored on your Brower LocalStorage<br>We Never Logged or Stored your Sensitive Data in our Server<br><b>ZERO LOGS</b></small>
+</blockquote>
+<p><pre>https://push.example.com/message?token=xxxxxxxxxxxxx</pre></p>
+<br>
+<form onsubmit="return false;">
+<p class="control">
+<input class="input is-info column is-half input-box" type="text" name="apiurl" id="apiurl" placeholder="API URL" autocomplete="off">                
+</p>
+<button id="save" type="submit" class="button is-success sign-button">🗃 SAVE SETTINGS</button>
+</form>
+<br />
+<div id="apicheck"></div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container content">
+<div class="columns is-centered">
+<div class="column is-half">
+<div class="card-content content user-form login">
+<h3 class="title has-text-centered">Send Push Notification</h3>
+<blockquote class="notification is-link">
+<small>Enter the Push Title and Message Click <b>POST DATA</b> to Send Push Notification to your Gotify Server.</small>
+</blockquote>
+<form id="postData">
+<div class="field">
+<label class="label has-text-centered has-text-weight-medium">Push Title*</label>
+<div class="control">
+<input class="input is-info column is-half input-box" type="text" id="title" name="title">
+</div>
+</div>
+<p class="field">
+<label class="label has-text-centered has-text-weight-medium">Message*</label>
+<div class="control">
+<textarea class="textarea textbox is-info column" type="text" id="message" name="message" rows="5"></textarea>
+</div>
+</p>
+<div class="control">
+<button id="push" class="button is-success sign-button">▶ POST DATA</button>
+</div>
+</form>
+<br>
+<div id="notice"></div>
+</div>
+</div>
+</div>
+</div>
+</section> 
+
+<footer class="footer">
+<div class="content has-text-centered">
+
+<div class="buttons is-centered">
+<button class="button pwa-button is-link" id="installPWA" onclick="installPWA()">Install App</button>
+</div>
+
+<br>
+<br>
+<div class="tags has-addons is-horizontal-center">
+<span class="tag is-dark">PWA</span>
+<span class="tag is-warning">Support</span>
+</div>
+<p>🔔 Push Notification Server by <b>Gotify.net</b></p>
+</div>
+</footer>
+
+<script>
+    if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('sw.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }).catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+</script>
+
+<script>
+    let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                localStorage.setItem('pwaInstalled', 'yes')
+                pwaInstalled = true
+            }
+            if (window.navigator.standalone === true) {
+                localStorage.setItem('pwaInstalled', 'yes')
+                pwaInstalled = true
+            }
+            if (pwaInstalled) {
+                document.getElementById('installPWA').style.display = 'none'
+            } else {
+                document.getElementById('installPWA').style.display = 'inline-flex'
+            }
+            let deferredPrompt = null
+            window.addEventListener('beforeinstallprompt', (e) => {
+                deferredPrompt = e
+            })
+            async function installPWA() {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt()
+                    deferredPrompt.userChoice.then(({
+                        outcome
+                    }) => {
+                        if (outcome === 'accepted') {
+                            console.log('Your PWA has been installed')
+                        } else {
+                            console.log('User chose to not install your PWA')
+                        }
+                        deferredPrompt = null
+                    })
+                }
+            }
+            window.addEventListener('appinstalled', (evt) => {
+                localStorage.setItem('pwaInstalled', 'yes')
+                pwaInstalled = true
+                document.getElementById('installPWA').style.display = 'none'
+            })
+ </script>
+
+<script src="assets/js/storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>

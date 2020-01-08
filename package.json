@@ -1,0 +1,36 @@
+{
+	"name": "gotify-pwa",
+	"version": "1.0.0",
+	"description": "Simple Web App with PWA Feature for Send Push Notification to Gotify Server.",
+	"scripts": {
+		"dev": "gulp",
+		"build": "gulp build"
+	},
+	"keywords": [
+		"gotify"
+	],
+	"author": "Santhosh Veer",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mskian/gotify-pwa.git"
+	},
+	"bugs": "https://github.com/mskian/gotify-pwa/issues",
+	"devDependencies": {
+		"autoprefixer": "^9.7.3",
+		"beeper": "^2.0.0",
+		"cssnano": "^4.1.10",
+		"gulp": "^4.0.2",
+		"gulp-livereload": "^4.0.2",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-watch": "^5.0.1",
+		"postcss-color-function": "^4.1.0",
+		"postcss-custom-properties": "^9.0.2",
+		"postcss-easy-import": "^3.0.0",
+		"pump": "^3.0.0"
+	},
+	"browserslist": [
+		"defaults"
+	]
+}
