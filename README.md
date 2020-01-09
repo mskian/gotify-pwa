@@ -13,7 +13,7 @@ Simple Web App with PWA Feature for Send Push Notifications to the Gotify Server
 - Progressive Web App
 - Proper Form and API validation
 
-> **Note:** you need to Enable a Cors headers (Cross-Origin Resource Sharing) to Access your API on Third-pary websites.
+> **Note:** you need to Enable a Cors headers (Cross-Origin Resource Sharing) to Access your API on Third-party websites.
 
 - Open Gotify Setup file - `config.yml` File
 - Find the Line `responseheaders: # response headers are added to every response (default: none)`
