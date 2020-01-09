@@ -45,10 +45,10 @@ function postData(event) {
             })
             .catch(function(error) {
                 if (!error.response) {
-                    console.log('oops Enter a Valid URL');
+                    console.log('oops Enter a API Valid URL');
                     document.getElementById("notice").innerHTML = '<div class="notification is-danger">Enter a Valid URL</div>';
                 } else if (error.errno === 'ECONNREFUSED') {
-                    console.log('Enter a Valid URL');
+                    console.log('Enter a Valid API URL');
                     document.getElementById("notice").innerHTML = '<div class="notification is-danger">Enter a Valid URL</div>';
                 } else if (error.errno === 'ENOTFOUND') {
                     console.log('URL ERROR');
