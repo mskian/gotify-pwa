@@ -1,6 +1,6 @@
 function saveOptions() {
     const apiurl = document.querySelector('#apiurl').value;
-    var re = /^HTTP|HTTP|http(s)?:\/\/(www\.)?[A-Za-z0-9]+([\-\.]{1}[A-Za-z0-9]+)*\.[A-Za-z]{2,40}(:[0-9]{1,40})?(\/.*)?$/;
+    var re = /^HTTP|HTTP|http(s)?:\/\/(localhost|www\.)?[A-Za-z0-9]+([\-\.]{1}[A-Za-z0-9]+)*\.[A-Za-z]{2,40}(:[0-9]{1,40})?(\/.*)?$/;
     if (apiurl == 0) {
         console.log('Gotify API URL and Key is Missing');
         document.getElementById("apicheck").innerHTML = '<div class="notification is-danger">Gotify API URL and Key is Missing</div>';
