@@ -4,7 +4,8 @@
 	"description": "Simple Web App with PWA Feature for Send Push Notification to Gotify Server.",
 	"scripts": {
 		"dev": "gulp",
-		"build": "gulp build"
+		"build": "gulp build",
+		"live": "php -S localhost:3030 -t public/"
 	},
 	"keywords": [
 		"gotify"
