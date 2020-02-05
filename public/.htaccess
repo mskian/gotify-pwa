@@ -54,3 +54,7 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 2 days"
 </IfModule>
 ## EXPIRES HEADER CACHING ##
+
+<Location /sw.js >
+Header set Cache-Control "no-cache"
+</Location>
