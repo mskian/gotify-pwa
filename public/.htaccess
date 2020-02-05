@@ -55,6 +55,6 @@ ExpiresDefault "access 2 days"
 </IfModule>
 ## EXPIRES HEADER CACHING ##
 
-<Files /sw.js >
+<Files sw.js >
 Header set Cache-Control "no-cache"
 </Files>
