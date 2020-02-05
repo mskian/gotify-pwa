@@ -1,6 +1,6 @@
 # Gotify PWA
 
-![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784276997-eda1b154856ee5be380c52fd) ![David](https://img.shields.io/david/dev/mskian/gotify-pwa)  
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m784276997-eda1b154856ee5be380c52fd) ![David](https://img.shields.io/david/dev/mskian/gotify-pwa)  
 
 Simple Web App with PWA Feature for Send Push Notifications to the Gotify Server.
 
