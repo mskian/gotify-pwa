@@ -1,6 +1,6 @@
 # Gotify PWA
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1027cfc0-30bd-4234-83bb-c27a7c26071f/deploy-status)](https://app.netlify.com/sites/mskpush/deploys)
+![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784276997-eda1b154856ee5be380c52fd) ![David](https://img.shields.io/david/dev/mskian/gotify-pwa)  
 
 Simple Web App with PWA Feature for Send Push Notifications to the Gotify Server.
 
