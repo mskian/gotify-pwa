@@ -56,5 +56,6 @@ ExpiresDefault "access 2 days"
 ## EXPIRES HEADER CACHING ##
 
 <Files sw.js >
+Header unset ETag
 Header set Cache-Control "no-cache"
 </Files>
