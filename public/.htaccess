@@ -6,6 +6,13 @@ Header always set X-Content-Type-Options "nosniff"
 
 Options -Indexes
 
+<Files sw.js >
+Header unset ETag
+Header set Cache-Control "no-cache"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</Files>
+
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
@@ -54,10 +61,3 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 2 days"
 </IfModule>
 ## EXPIRES HEADER CACHING ##
-
-<Files sw.js >
-Header unset ETag
-Header set Cache-Control "no-cache"
-Header set Pragma "no-cache"
-Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
-</Files>

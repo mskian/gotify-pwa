@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "gulp",
 		"build": "gulp build",
-		"live": "php -S localhost:3030 -t public/"
+		"live": "http-server ./public --p 3001"
 	},
 	"keywords": [
 		"gotify"
@@ -26,6 +26,7 @@
 		"gulp-postcss": "^8.0.0",
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-watch": "^5.0.1",
+		"http-server": "^0.12.1",
 		"postcss-color-function": "^4.1.0",
 		"postcss-custom-properties": "^9.1.1",
 		"postcss-easy-import": "^3.0.0",
