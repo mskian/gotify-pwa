@@ -58,6 +58,11 @@ yarn dev
 yarn buld
 ```
 
+```bash
+## Test the site locally
+yarn live
+```
+
 - Upload `public` Folder on your server
 
 ### Chrome Extension
