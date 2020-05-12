@@ -16,16 +16,19 @@ Simple Web App with PWA Feature for Send Push Notifications to the Gotify Server
 > **Note:** you need to Enable a Cors headers (Cross-Origin Resource Sharing) to Access your API on Third-party websites.
 
 - Open Gotify Setup file - `config.yml` File
-- Find the Line `responseheaders: # response headers are added to every response (default: none)`
-- uncomment `#` the Core Headers also add extra Header codes
+- Find the Line `cors: # Sets cors headers only when needed and provides support for multiple allowed origins. Overrides Access-Control-* Headers in response headers.`
+- uncomment `#` the Cors and whitelist the domain to accesss your API
 
 ```yaml
-responseheaders: # response headers are added to every response (default: none)
-    Access-Control-Allow-Origin: "*"
-    Access-Control-Allow-Headers: "origin, x-requested-with, content-type"
-    Access-Control-Allow-Methods: "GET,POST"
-    Strict-Transport-Security: max-age=31536000
-    X-Xss-Protection: 1; mode=block
+cors: # Sets cors headers only when needed and provides support for multiple allowed origins. Overrides Access-Control-* Headers in response headers.
+    alloworigins:
+      - "push.santhoshveer.com"
+    allowmethods:
+      - "GET"
+      - "POST"
+    allowheaders:
+     - "Authorization"
+     - "content-type"
 ```
 
 ## Development 🛠
