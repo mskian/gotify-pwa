@@ -18,21 +18,23 @@
 	},
 	"bugs": "https://github.com/mskian/gotify-pwa/issues",
 	"devDependencies": {
-		"autoprefixer": "^9.8.5",
+		"autoprefixer": "^10.1.0",
 		"beeper": "^2.0.0",
 		"cssnano": "^4.1.10",
 		"gulp": "^4.0.2",
 		"gulp-livereload": "^4.0.2",
-		"gulp-postcss": "^8.0.0",
-		"gulp-sourcemaps": "^2.6.5",
+		"gulp-postcss": "^9.0.0",
+		"gulp-sourcemaps": "^3.0.0",
 		"gulp-watch": "^5.0.1",
 		"http-server": "^0.12.1",
+		"postcss": "^8.2.2",
 		"postcss-color-function": "^4.1.0",
-		"postcss-custom-properties": "^9.1.1",
+		"postcss-custom-properties": "^10.0.0",
 		"postcss-easy-import": "^3.0.0",
 		"pump": "^3.0.0"
 	},
 	"browserslist": [
 		"defaults"
-	]
+	],
+	"dependencies": {}
 }
